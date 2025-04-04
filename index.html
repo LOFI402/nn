@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Доброго дня!</title>
+    <style>
+        body { margin: 0; padding: 0; background: transparent; }
+        #scene { max-width: 100%; height: auto; border-radius: 12px; }
+    </style>
+</head>
+<body>
+    <img id="scene" src="" alt="Доброго дня">
+    <script>
+        const hour = new Date().getHours();
+        const images = {
+            morning: 'https://i.imgur.com/qphSrMV.jpg',
+            day: 'https://i.imgur.com/aWMVikD.jpg',
+            evening: 'https://i.imgur.com/H04saDK.jpg',
+            night: 'https://i.imgur.com/YkyrKXt.jpg'
+        };
+        document.getElementById('scene').src = 
+            hour >= 5 && hour < 12 ? images.morning :
+            hour >= 12 && hour < 17 ? images.day :
+            hour >= 17 && hour < 23 ? images.evening : images.night;
+    </script>
+</body>
+</html>
